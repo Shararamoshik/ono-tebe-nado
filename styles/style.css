@@ -1,20 +1,29 @@
 /* место для вашего кода */
 
-header {
-  height: 293px;
+.header {
+ /* 293px */
+  margin-top: 92px;
+  margin-bottom: 96px;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr min-content 1fr;
 }
-
 header, .cover, .lots, .about, footer{
   max-width: 1440px;
+  margin-top: 92px;
   width: 100%;
   margin: 0 auto;
 }
-
-
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
 .header__links-list {
   list-style-type: circle;
   display: flex;
@@ -22,7 +31,6 @@ header, .cover, .lots, .about, footer{
   gap: 32px;
   margin-left: 50px;
   color: #000;
-
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -41,25 +49,31 @@ header, .cover, .lots, .about, footer{
   height: 105px; 
   margin: auto;
 }
-.adress__list {
+.address {
+  max-width: 240px;
+}
+.address__list {
   display: flex;
   flex-direction: column;
+  list-style: none;
   color: #000;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 24.3px;
 }
-.header__adress {
+.header__address {
   margin-left: auto;
   margin-right: 52px;
 }
 .cover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/cover.jpg");
+  position: relative;
+  background-image: url("../images/cover.jpg");
   background-size: cover;
-  height: 757px;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 165px 50px 50px;
-
+  z-index: -2;
 }
 .cover__title {
   display: flex;
@@ -81,7 +95,6 @@ header, .cover, .lots, .about, footer{
   margin-left: auto;
   margin-right: -30px;
 }
-
 .letter-spacing-extended {
   letter-spacing: 60px; 
 }
@@ -107,7 +120,6 @@ header, .cover, .lots, .about, footer{
   text-transform: uppercase;
   background: transparent;
   border: 1px solid #fff;
-  border-radius: 0;
   color: #fff;
   padding: 12px 32px;
 }
@@ -117,7 +129,6 @@ header, .cover, .lots, .about, footer{
 }
 .lots__heading {
   margin-left: 40px;
-  font-family: Raleway;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -137,24 +148,24 @@ header, .cover, .lots, .about, footer{
   min-height: 450px;
   flex-grow: 1;
 }
-
-
 .card-link {
   display: block;
   height: 100%;
   text-decoration: none;
 }
 .card {
+  position: relative;
   height: 100%;
   min-width: 430px;
   display: flex;
   color: #FFF;
   flex-direction: column;
   justify-content: space-between;
-  
   padding: 55px 40px 48px;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2;
 }
 .card-title {
   font-size: 22px;
@@ -178,15 +189,15 @@ header, .cover, .lots, .about, footer{
   line-height: normal; 
 }
 .card_type_film {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-01.jpg);
+  background-image: url(../images/card-lot-01.jpg);
 }
 
 .card_type_book {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-02.jpg);
+  background-image: url(../images/card-lot-02.jpg);
 }
 
 .card_type_picture {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-03.jpg);
+  background-image: url(../images/card-lot-03.jpg);
 }
 .about {
   display: grid;
@@ -219,18 +230,19 @@ header, .cover, .lots, .about, footer{
   text-transform: uppercase;
 }
 .about__text {
+  display: flex;
+  flex-direction: column;
   font-weight: 400;
   font-size: 20px;
   font-style: normal;
   line-height: 115%;
-}
-.about__text p:not(:last-child) {
-  margin-bottom: 30px;
+  gap: 30px;
 }
 .footer {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   padding: 0px 50px 0px;
+  margin-bottom: 90px;
 }
 .footer__menu-list {
   list-style: none;
@@ -249,21 +261,14 @@ header, .cover, .lots, .about, footer{
   width: 149px;
   margin-left: auto;
 }
-
 .footer__social-list {
   display: flex;
   gap: 48px;
   list-style: none;
 }
-
-.footer__social-list-item {
-  height: 48px;
-}
-
 .footer__social-link {
   display: flex;
 }
-
 .footer__social-icon {
   width: 48px;
   height: 48px;
