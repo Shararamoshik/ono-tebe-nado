@@ -1,20 +1,18 @@
 /* место для вашего кода */
 
+.header, .cover, .lots, .about, .footer{
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
 .header {
- /* 293px */
   margin-top: 92px;
   margin-bottom: 96px;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr min-content 1fr;
-}
-header, .cover, .lots, .about, footer{
-  max-width: 1440px;
-  margin-top: 92px;
-  width: 100%;
-  margin: 0 auto;
-}
+ }
 .overlay {
   position: absolute;
   top: 0;
@@ -22,7 +20,7 @@ header, .cover, .lots, .about, footer{
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  z-index: 1;
 }
 .header__links-list {
   list-style-type: circle;
@@ -73,7 +71,9 @@ header, .cover, .lots, .about, footer{
   background-repeat: no-repeat;
   background-position: center;
   padding: 165px 50px 50px;
-  z-index: -2;
+}
+.forward_shift {
+  z-index: 2;
 }
 .cover__title {
   display: flex;
@@ -258,7 +258,7 @@ header, .cover, .lots, .about, footer{
 .footer__social {
   display: flex;
   justify-content: end;
-  width: 149px;
+  max-width: 149px;
   margin-left: auto;
 }
 .footer__social-list {
